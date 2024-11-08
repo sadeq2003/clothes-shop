@@ -1,0 +1,97 @@
+<?php
+$servername="localhost";
+$username="root";
+$password="";
+$dbname="newdb";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+} 
+
+//fetch from database
+$sql = "SELECT * from bookdb";
+$result = $conn->query($sql);
+
+?>
+<html>
+</head>
+<title>E-Library Display Section</title>
+<link rel="stylesheet" type="text/css" href="css/display.css">
+</head>
+<body>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="">E-Library</a></li>
+			<li><a href="https://www.alapan.me/" target="_blank">Visit My Blog!</a></li>
+		</ul>
+	<div style="overflow-x:auto;">
+	<h1>Books Available for Free Download</h1>
+		<table width="100%" cellspacing="0" cellpadding="18">
+				<div class="header">
+					<th>Book Name</th>
+					<th>Book Description</th>
+					<th>Book Author</th>
+					<th>Book Language</th>
+					<th>Download Link</th>
+					<th>Uploader Name</th>
+					<th>Uploader Email</th>
+				</div>	
+					<tr>
+						<?php
+							while($row = $result->fetch_assoc()) {
+							echo "<tr>";
+							echo "<td>".$row['bookname']."</td>";
+							echo "<td>".$row['bookdesc']."</td>";
+							echo "<td>".$row['bookauthor']."</td>";
+							echo "<td>".$row['booklang']."</td>";
+							echo "<td><a href='http://localhost/Elibrary/files/".$row['bookfile']."'><b>Download E-Book</b></a></td>";
+							echo "<td>".$row['uploadername']."</td>";
+							echo "<td>".$row['uploaderemail']."</td>";
+							echo "</tr>";
+							}
+						?>
+		</table>
+	</div>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
