@@ -82,7 +82,7 @@ include('../shopping/include/connect.php');
             <h2>لوحة تحكم الإدارة</h2>
             <ul>
                 <li><a href="../php/index.html"> <i class="fa-solid fa-house"></i> الصفحة الرئيسية</a></li>
-                <li><a href="products.php">
+                <li><a href="#">
                 <i class="fa-solid fa-shirt"></i>صفحة المنتجات</a></li>
                 <li><a href="#">
                 <i class="fa-solid fa-folder-plus"></i>إضافة منتج</a></li>
@@ -97,17 +97,27 @@ include('../shopping/include/connect.php');
 
         <!-- المحتوى الرئيسي -->
         <div class="main-content">
-            <h1>إضافة قسم جديد</h1>
-            <form action="admin.php" method="post">
-                <input type="text" placeholder="اسم القسم" name="sectionname"/>
-                <button type="submit" name="sectionadd">إضافة قسم</button>
+            <h1>إضافة منتج جديد</h1>
+            <form action="products.php" method="post">
+                <input type="namber" placeholder=" رقم المنتج" name="sectionname"/>
+                <input type="text" placeholder="اسم المنتج" name="sectionname"/>
+                <input type="text" placeholder="حجم المنتج" name="sectionname"/>
+                <input type="text" placeholder="لون المنتج" name="sectionname"/>
+                <input type="price" placeholder="سعر المنتج" name="sectionname"/>
+                <input type="file" placeholder="صورة المنتج" name="sectionname"/>
+                <button type="submit" name="sectionadd">إضافة المنتج</button>
             </form>
             <table >
                 <thead>
                     <tr>
                         <th>الرقم التسلسلي</th>
-                        <th>اسم القسم</th>
-                        <th>حذف القسم</th>
+                        <th>اسم المنتج</th>
+                        <th>حجم المنتج</th>
+                        <th>لون المنتج</th>
+                        <th>سعر المنتج</th>
+                        <th>صورة المنتج</th>
+                        <th>حذف المنتج</th>
+                        
                     </tr>
                 </thead>
                 <?php
@@ -120,8 +130,12 @@ include('../shopping/include/connect.php');
                 <tbody>
                     <tr>
                         <td><?php echo $row['id']; ?></td>
+                        <td><?php echo $row['id']; ?></td>
+                        <td><?php echo $row['id']; ?></td>
+                        <td><?php echo $row['id']; ?></td>
+                        <td><?php echo $row['id']; ?></td>
                         <td><?php echo $row['sectionname']; ?></td>
-                        <td><button class="delete-btn">حذف القسم</button></td>
+                        <td><button class="delete-btn">حذف المنتج</button></td>
                     </tr>
                     
                 </tbody>

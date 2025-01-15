@@ -18,8 +18,8 @@
         <div>
             
             <ul id="navbar">
-                <li><a href="#index.html" class="active">Home</a></li>
-                <li><a href="../php/shop.html">Shop</a></li>
+                <li><a href="../php/index.html" class="active">Home</a></li>
+                <li><a href="../php/shop.php">Shop</a></li>
                 <li><a href="#market.html">market</a></li>
                 <li><a href="#live-test.html">live-test</a></li>
                 <li><a href="../php/payment.html"><i class="fa-solid fa-cart-plus"></i></a></li>

@@ -1,3 +1,7 @@
+<?php
+ session_start();
+include('../shopping/include/connect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +14,6 @@
     <title> shop page</title>
 </head>
 <body>
-    
     <section id="header">
         <div>
             <a href="../php/index.html"><img src="../logos/logoheader.png" alt="store-logo" class="logo" id="logo"></a>
@@ -40,9 +43,29 @@
             
         
     </section>
+    <section id="section">
+        <div class="section-bar">
+            <h2>
+                الاقسام
+            </h2>
+            <ul>
+            <?php 
+                        $query="SELECT * from section";
+                        $result=mysqli_query($conn,$query);
+                        while($row=mysqli_fetch_assoc($result)){
+                            ?>
+                <li>
+                    <a href="">
+                        <?php echo $row['sectionname'];?>          
+                    </a>
+                </li>
+                <?php 
+                        }    
+                        ?>  
+            </ul>
+        </div>
     
-   
-    
+    </section>
     <section id="product1" class="section-p1">
         <div class="pro-continer">
             <div class="products" onclick="window.location.href='single_product.html';">
@@ -197,8 +220,6 @@
 
             
     </section>
-    
-   
     <section id="newsletters" class="section-p1">
         <div class="newstext">
             <h4>
@@ -262,8 +283,6 @@
         </div>
        
     </footer>
-
-
-    <script src="../php/javascript.js"></script>
+script src="../php/javascript.js"></script>
 </body>
 </html>
