@@ -11,9 +11,7 @@ include('../shopping/include/connect.php');
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="icon" href="logos/logoheader.png">
-    
     <title>store shoping</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <?php
@@ -28,8 +26,9 @@ include('../shopping/include/connect.php');
     ?>
    
     <?php 
-    $sectionname=$_POST['sectionname'];
-    $addsection=$_POST['sectionadd'];
+    @$sectionname=$_POST['sectionname'];
+    @$addsection=$_POST['sectionadd'];
+    @$id=$_GET['id'];
 
 
     if(isset($addsection)){
@@ -50,33 +49,48 @@ include('../shopping/include/connect.php');
     }}
     ?>
     
+<!-- حدف القسم  ______________________ -->
+<?php
+if(isset($id)){
+    $query="DELETE FROM section where id= '$id'";
+    $delete =mysqli_query($conn,$query);
+    if(isset($delete)){
+        echo '<script> alert("ثم الحذف بنجاح "</script>';
 
-        <section id="header">
+    }
+    else{
+        echo '<script> alert("لم يتم الحذف  "</script>';
+        
+    }
+}
 
-        <div>
-            <a href="../php/index.html"><img src="../logos/logoheader.png" alt="store-logo" class="logo" id="logo"></a>
-        </div>
-        <div>
-            
-            <ul id="navbar">
-                <li><a href="../php/index.html" >Home</a></li>
-                <li><a href="../php/shop.php">Shop</a></li>
-                <li><a href="#market.html">market</a></li>
-                <li><a href="#live-test.html">live-test</a></li>
-                <li><a href="../php/payment.html"><i class="fa-solid fa-cart-plus"></i></a></li>
-                <li><a href="../admin/login.php" class="active"><i class="fa-solid fa-user" ></i></a></li>
-                <li ><i  class="fa-solid fa-circle-xmark" id="close"></i></li>
-            </ul>
-        </div>
-        <div id="mobile">
-            <a href="../php/payment.html"><i class="fa-solid fa-cart-plus"></i></a>
-            <i id="bar" class="fas fa-outdent"></i>
-            
-        </div>
-    </section>
+?>
 
+<section id="header" style="margin: 0;">
+
+<div>
+    <a href="../php/index.html"><img src="../logos/logoheader.png" alt="store-logo" class="logo" id="logo"></a>
+</div>
+<div>
     
-    <section id="container">
+    <ul id="navbar">
+        <li><a href="../php/index.html" >Home</a></li>
+        <li><a href="../php/shop.php">Shop</a></li>
+        <li><a href="#market.html">market</a></li>
+        <li><a href="../php/al.php">VR</a></li>
+        <li><a href="../php/payment.php"><i class="fa-solid fa-cart-plus"></i></a></li>
+        <li><a href="../admin/login.php" class="active"><i class="fa-solid fa-user" class="active"></i></a></li>
+        <li ><i  class="fa-solid fa-circle-xmark" id="close"></i></li>
+    </ul>
+</div>
+<div id="mobile">
+    <a href="../php/payment.html"><i class="fa-solid fa-cart-plus"></i></a>
+    <i id="bar" class="fas fa-outdent"></i>
+    
+</div>
+</section>
+  <section id="container">
+
         <!-- القائمة الجانبية -->
         <div class="sidebar">
             <h2>لوحة تحكم الإدارة</h2>
@@ -121,7 +135,9 @@ include('../shopping/include/connect.php');
                     <tr>
                         <td><?php echo $row['id']; ?></td>
                         <td><?php echo $row['sectionname']; ?></td>
-                        <td><button class="delete-btn">حذف القسم</button></td>
+                        <td><a href="admin.php?id=<?php  echo $row['id']; ?>">
+                        <button type="submit" class="delete-btn">حذف القسم</button>
+                        </a></td>
                     </tr>
                     
                 </tbody>
@@ -136,5 +152,6 @@ include('../shopping/include/connect.php');
      }
      ?>
 
+<script src="../php/javascript.js"></script>
 </body>
 </html>

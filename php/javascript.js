@@ -24,56 +24,89 @@ cardNumInput.addEventListener('keyup', () => {
     }
 });
 
-// JavaScript for Cart Management
-document.addEventListener("DOMContentLoaded", function () {
-    loadCart();
+var all_products_json;
+var items_in_cart=document.getElementById("cart");
+let product_cart =[];
+function addToCart(id,btn){
+    product_cart.push(all_products_json[id])
+    btn.classList.add("active")
+    console.log(id);
+    getcartitem()
 
-    document.querySelectorAll(".add-to-cart").forEach(button => {
-        button.addEventListener("click", function () {
-            let product = this.dataset.product;
-            let price = this.dataset.price;
-            addToCart(product, price);
-        });
-    });
-});
-
-function addToCart(product, price) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let existingItem = cart.find(item => item.product === product);
-
-    if (existingItem) {
-        existingItem.quantity++;
-    } else {
-        cart.push({ product, price, quantity: 1 });
-    }
-
-    localStorage.setItem("cart", JSON.stringify(cart));
-    loadCart();
 }
-
-function removeFromCart(index) {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    cart.splice(index, 1);
-    localStorage.setItem("cart", JSON.stringify(cart));
-    loadCart();
-}
-
-function loadCart() {
-    let cart = JSON.parse(localStorage.getItem("cart")) || [];
-    let cartTable = document.querySelector("#cart tbody");
-    cartTable.innerHTML = "";
-
-    cart.forEach((item, index) => {
-        let row = `
+function getcartitem(){
+    let item_c="";
+    for(i=0;i<product_cart.length;i++){
+        item_c +=`
+    <table width="100%">
+       
+        <tbody>
             <tr>
-                <td><button onclick="removeFromCart(${index})">X</button></td>
-                <td><img src="../clotes/4.jpg" alt=""></td>
-                <td>${item.product}</td>
-                <td>${item.price}$</td>
-                <td>${item.quantity}</td>
-                <td>${item.price * item.quantity}$</td>
+                <td>
+                   <a href=""><i class="far fa-times-circle"></i></a> 
+                </td>
+                <td>
+                    <img src="${products.img_src}" alt="">
+                </td>
+                <td>
+                    hody t-shirt
+                </td>
+                <td>
+                    15$
+                </td>
+                <td>
+                    <input type="namber" value="1">
+                </td>
+                <td>
+                    15$
+                </td>
             </tr>
-        `;
-        cartTable.innerHTML += row;
-    });
+            <tr>
+                <td>
+                   <a href=""><i class="far fa-times-circle"></i></a> 
+                </td>
+                <td>
+                    <img src="../clotes/4.jpg" alt="">
+                </td>
+                <td>
+                    hody t-shirt
+                </td>
+                <td>
+                    15$
+                </td>
+                <td>
+                    <input type="namber" value="1">
+                </td>
+                <td>
+                    15$
+                </td>
+            </tr>
+            <tr>
+                <td>
+                   <a href=""><i class="far fa-times-circle"></i></a> 
+                </td>
+                <td>
+                    <img src="../clotes/4.jpg" alt="">
+                </td>
+                <td>
+                    hody t-shirt
+                </td>
+                <td>
+                    15$
+                </td>
+                <td>
+                    <input type="namber" value="1">
+                </td>
+                <td>
+                    15$
+                </td>
+            </tr>
+        </tbody>
+
+    </table>
+        `
+        
+        cart.innerHTML=item_c;
+
+    }
 }

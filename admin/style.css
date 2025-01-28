@@ -9,24 +9,22 @@ body {
 }
 
 #container{
+    margin-top: 80px;
     direction: rtl;
     width:100%;
     justify-content:space-around ;
     align-items: center;
-
 }
 
 /* الشريط الجانبي */
 .sidebar {
-    background-color: #333;
+    background-color: #2b2f2b;
     display: flex;
-    align-items: start;
+    align-items: center;
     color: white;
-    padding: 15px;
     height: 100vh;
     width: 100%;
-    justify-content: space-between;
-    align-items: center;
+    justify-content:space-evenly;
     height: 20vh;    
 }
 
@@ -71,7 +69,7 @@ body {
 
 /* المحتوى الرئيسي */
 .main-content {
-    padding: 20px;
+    padding: 40px;
     background-color: white;
 
 }
@@ -83,23 +81,36 @@ body {
 
 form {
     margin-bottom: 20px;
+    position: relative;
 }
 
 form input {
     padding: 10px;
-    width: calc(100% - 120px);
+    width: calc(90% - 120px);
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+
+form select {
+    padding: 10px;
+    width: calc(90% - 120px);
     margin-right: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
 form button {
+    position: absolute;
     padding: 10px 20px;
     background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    margin-right: 5px;
 }
 
 form button:hover {
@@ -126,6 +137,14 @@ table th {
 .delete-btn {
     padding: 5px 10px;
     background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#update-btn{
+    padding: 5px 10px;
+    background-color: green;
     color: white;
     border: none;
     border-radius: 5px;

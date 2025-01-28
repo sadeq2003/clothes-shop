@@ -52,7 +52,7 @@ include('../shopping/include/connect.php');
             <div class="contian">
                 <div class="input">
                     <h1>
-                        login
+                        login admin page 
                     </h1>
                     <div class="input-box">
                         <input type="email" placeholder="user name" name="email">
@@ -64,20 +64,11 @@ include('../shopping/include/connect.php');
                     </div>
                 </div>
                 
-                <div class="remamber">
-                    
-                    <label for="checkbox"><input type="checkbox" id="checkbox">remamber me</label>
-                    
-                    <label for=""><a href="">forget password</a></label>
-        
-                </div>
+                
                 <button type="submit" name="add">
                     login
                 </button >
-                <div class="register">
-                    <p>dont have on account? <a href="register.php">Register</a></p>
-        
-                </div>
+                
             </div>
            </form>
     </section>

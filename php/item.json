@@ -1,0 +1,87 @@
+
+[
+    {
+        "id": 0,
+        "name": "Casual Jacket",
+        "description": "Stylish and comfortable for everyday wear",
+        "img_src": "../clotes/1.jpg",
+        "price": 45,
+        "old_price": 60
+    },
+    {
+        "id": 1,
+        "name": "Denim Jeans",
+        "description": "Classic blue denim with a modern fit",
+        "img_src": "../clotes/2.jpg",
+        "price": 50,
+        "old_price": 65
+    },
+    {
+        "id": 2,
+        "name": "Summer Dress",
+        "description": "Lightweight and perfect for warm days",
+        "img_src": "../clotes/3.jpg",
+        "price": 38,
+        "old_price": 50
+    },
+    {
+        "id": 3,
+        "name": "Formal Suit",
+        "description": "Elegant and professional, perfect for meetings",
+        "img_src": "../clotes/4.jpg",
+        "price": 120,
+        "old_price": 150
+    },
+    {
+        "id": 4,
+        "name": "Hoodie",
+        "description": "Soft and warm, ideal for chilly evenings",
+        "img_src": "../clotes/5.jpg",
+        "price": 35,
+        "old_price": 45
+    },
+    {
+        "id": 5,
+        "name": "Sports T-Shirt",
+        "description": "Breathable fabric for active lifestyles",
+        "img_src": "../clotes/6.jpg",
+        "price": 25,
+        "old_price": 35
+    },
+    {
+        "id": 6,
+        "name": "Leather Jacket",
+        "description": "Premium leather with a stylish finish",
+        "img_src": "../clotes/7.jpg",
+        "price": 90,
+        "old_price": 110
+    },
+    {
+        "id": 7,
+        "name": "Sweatpants",
+        "description": "Comfortable and perfect for lounging",
+        "img_src": "../clotes/8.jpg",
+        "price": 30,
+        "old_price": 40
+    },
+    {
+        "id": 8,
+        "name": "Cotton Shirt",
+        "description": "Light and breathable fabric for all-day wear",
+        "img_src": "../clotes/9.jpg",
+        "price": 28,
+        "old_price": 37
+    },
+    {
+        "id": 9,
+        "name": "Winter Coat",
+        "description": "Thick and insulated to keep you warm",
+        "img_src": "../clotes/10.jpg",
+        "price": 75,
+        "old_price": 95
+    }
+]
+
+    
+
+   

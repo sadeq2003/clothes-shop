@@ -1,4 +1,4 @@
-<?php
+<!-- <!-- <?php
 $host="localhost";
 $username="root";
 $password="";
@@ -12,4 +12,4 @@ if (isset($conn)){
     {
         echo "Connect not implemented";
 
-    }
+    }  -->

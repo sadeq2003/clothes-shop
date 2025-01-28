@@ -22,16 +22,16 @@ include('../shopping/include/connect.php');
             
             <ul id="navbar">
                 <li><a href="../php/index.html" >Home</a></li>
-                <li><a href="../php/shop.html"  class="active">Shop</a></li>
+                <li><a href="../php/shop.php"  class="active">Shop</a></li>
                 <li><a href="#market.html">market</a></li>
-                <li><a href="#live-test.html">live-test</a></li>
-                <li><a href="../php/payment.html"><i class="fa-solid fa-cart-plus"></i></a></li>
+                <li><a href="al.php">VR</a></li>
+                <li><a href="../php/payment.php"><i class="fa-solid fa-cart-plus"></i></a></li>
                 <li><a href="../admin/login.php"><i class="fa-solid fa-user"></i></a></li>
                 <li ><i  class="fa-solid fa-circle-xmark" id="close"></i></li>
             </ul>
         </div>
         <div id="mobile">
-            <a href="../php/catr.html"><i class="fa-solid fa-cart-plus"></i></a>
+            <a href="../php/payment.html"><i class="fa-solid fa-cart-plus"></i></a>
             <i id="bar" class="fas fa-outdent"></i>
             
         </div>
@@ -67,146 +67,34 @@ include('../shopping/include/connect.php');
     
     </section>
     <section id="product1" class="section-p1">
-        <div class="pro-continer">
-            <div class="products" onclick="window.location.href='single_product.html';">
-                <img src="../clotes/10.jpg"
-                 alt="">
-                 <div class="product-dec">
-                    <span> adidas</span>
-                 <h5> cartoon astronaut t-shirt </h5>
-                 <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                 </div>
-                 <h4>20$</h4>
-                 <a href=""><i class="fas fa-shopping-cart"></i></a>
-                </div> 
-            </div>
-            <div class="products" onclick="window.location.href='single_product.html';">
-                <img src="../clotes/11.jpg"
-                 alt="">
-                 <div class="product-dec">
-                    <span> adidas</span>
-                 <h5> cartoon astronaut t-shirt </h5>
-                 <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                 </div>
-                 <h4>20$</h4>
-                 </div>
-                 <a href=""><i class="fas fa-shopping-cart"></i></a>
-                </div> 
-            <div class="products" onclick="window.location.href='single_product.html';">
-                <img src="../clotes/12.jpg"
-                 alt="">
-                 <div class="product-dec">
-                    <span> adidas</span>
-                 <h5> cartoon astronaut t-shirt </h5>
-                 <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                 </div>
-                 <h4>20$</h4>
-                 </div>
-                 <a href=""><i class="fas fa-shopping-cart"></i></a>
-                </div> 
-            <div class="products" onclick="window.location.href='single_product.html';">
-                <img src="../clotes/13.jpg"
-                 alt="">
-                 <div class="product-dec">
-                    <span> adidas</span>
-                 <h5> cartoon astronaut t-shirt </h5>
-                 <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                 </div>
-                 <h4>20$</h4>
-                 </div>
-                 <a href=""><i class="fas fa-shopping-cart"></i></a>
-                </div> 
-            <div class="products" onclick="window.location.href='single_product.html';">
-                <img src="../clotes/14.jpg"
-                 alt="">
-                 <div class="product-dec">
-                    <span> adidas</span>
-                 <h5> cartoon astronaut t-shirt </h5>
-                 <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                 </div>
-                 <h4>20$</h4>
-                 </div>
-                 <a href=""><i class="fas fa-shopping-cart"></i></a>
-                </div> 
-            <div class="products" onclick="window.location.href='single_product.html';">
-                <img src="../clotes/15.jpg"
-                 alt="">
-                 <div class="product-dec">
-                    <span> adidas</span>
-                 <h5> cartoon astronaut t-shirt </h5>
-                 <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                 </div>
-                 <h4>30$</h4>
-                 </div>
-                 <a href=""><i class="fas fa-shopping-cart"></i></a>
-                </div> 
-            <div class="products" onclick="window.location.href='single_product.html';">
-                <img src="../clotes/16.jpg"
-                 alt="">
-                 <div class="product-dec">
-                    <span> adidas</span>
-                 <h5> cartoon astronaut t-shirt </h5>
-                 <div class="star">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                 </div>
-                 <h4>20$</h4>
-                 </div>
-                 <a href=""><i class="fas fa-shopping-cart"></i></a>
-                </div> 
-            <div class="products" onclick="window.location.href='single_product.html';">
-                <img src="../clotes/17.jpg"
+        <div class="pro-continer"  id="pro_continer">
+            
+        <?php
+        $query="SELECT * from product ";
+        $result=mysqli_query($conn,$query);
+        while($row=mysqli_fetch_assoc($result)){?>
+
+            <div class="products" onclick="window.location.href='single_product.php?id=<?php echo $row['id'] ?>';">
+                <img src="../shopping/include/imgupload//<?php echo $row['proimg']?>"
                  alt="">
                  <div class="product-dec" >
-                     <span> adidas</span>
-                    <h5> cartoon astronaut t-shirt </h5>
+                    <!-- <h2 id="bonac">100</h2> -->
+                     <span> <?php echo $row['proname']?></span>
+                    <h5>  <?php echo $row['prodesc']?> </h5>
                      <div class="star">
                          <i class="fas fa-star"></i>
                          <i class="fas fa-star"></i>
                          <i class="fas fa-star"></i>
-                         <i class="fas fa-star"></i>
-                         <i class="fas fa-star"></i>
-                    
                         </div>
                   
-                          <h4>40$</h4>
+                          <h4><?php  echo $row['proprice'] ?></h4>
 
                     </div>
-                 <a href=""><i class="fas fa-shopping-cart"></i></a>
+                 <a href=""><i class="fas fa-shopping-cart">
+                    
+                 </i></a>
                 </div> 
+                <?php }?>
                 
         </div>
 
@@ -283,6 +171,10 @@ include('../shopping/include/connect.php');
         </div>
        
     </footer>
-script src="../php/javascript.js"></script>
+
+  
+    <script src="../php/javascript.js"></script>
+
+<script src="../php/item.js"></script>
 </body>
 </html>
