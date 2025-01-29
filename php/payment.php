@@ -1,135 +1,171 @@
+<?php
+session_start(); // تفعيل الـ SESSION
+include('../shopping/include/connect.php'); // الاتصال بقاعدة البيانات
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['add_to_cart'])) {
+    if (isset($_POST['proname'], $_POST['proprice'], $_POST['proimg'], $_POST['prosize'])) {
+        $product = [
+            'proname' => $_POST['proname'],
+            'proprice' => $_POST['proprice'],
+            'proimg' => $_POST['proimg'],
+            'prosize' => $_POST['prosize'],
+            'proQuantity' => 1
+        ];
+
+        if (!isset($_SESSION['cart'])) {
+            $_SESSION['cart'] = [];
+        }
+
+        $found = false;
+        foreach ($_SESSION['cart'] as &$item) {
+            if ($item['proname'] == $product['proname']) {
+                $item['proQuantity'] += 1;
+                $found = true;
+                break;
+            }
+        }
+
+        if (!$found) {
+            $_SESSION['cart'][] = $product;
+        }
+
+        header("Location: " . $_SERVER['PHP_SELF']);
+        exit();
+    }
+}
+
+if (isset($_GET['remove'])) {
+    $key = $_GET['remove'];
+    unset($_SESSION['cart'][$key]);
+    header("Location: payment.php");
+    exit();
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_quantity'])) {
+    if (isset($_POST['quantity'], $_POST['key'])) {
+        $new_quantity = (int) $_POST['quantity'];
+        $key = (int) $_POST['key'];
+        if ($new_quantity > 0) {
+            $_SESSION['cart'][$key]['proQuantity'] = $new_quantity;
+        }
+    }
+    header("Location: " . $_SERVER['PHP_SELF']);
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="..\css\style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="icon" href="logos/logoheader.png">
 </head>
 
 <body>
-     
     <section id="header">
         <div>
             <a href="index.html"><img src="../logos/logoheader.png" alt="store-logo" class="logo" id="logo"></a>
         </div>
         <div>
-            
             <ul id="navbar">
                 <li><a href="../php/index.html" >Home</a></li>
-                <li><a href="../php/shop.php"  >Shop</a></li>
+                <li><a href="../php/shop.php" >Shop</a></li>
                 <li><a href="#market.html">market</a></li>
                 <li><a href="al.php">VR</a></li>
-                <li><a href="../php/payment.php" class="active">
-                    <i class="fa-solid fa-cart-plus"></i></a></li>
-                    <li><a href="../admin/login.php"><i class="fa-solid fa-user"></i></a></li>
-                <li ><i  class="fa-solid fa-circle-xmark" id="close"></i></li>
+                <li><a href="../php/payment.php" class="active"><i class="fa-solid fa-cart-plus"></i></a></li>
+                <li><a href="../admin/login.php"><i class="fa-solid fa-user"></i></a></li>
+                <li><i  class="fa-solid fa-circle-xmark" id="close"></i></li>
             </ul>
         </div>
         <div id="mobile">
             <a href="../php/payment.html"><i class="fa-solid fa-cart-plus"></i></a>
             <i id="bar" class="fas fa-outdent"></i>
-            
         </div>
     </section>
     <section id="hero-payment">
-        
         <h1>#cart-s</h1>
         <p>قائمة الشراء الخاصة \ خصوم حتى %70</p>
-           
-       
-   </section>
-   <section id="cart" class="section-p1">
-    <hr id="hr-line">
-    <table width="100%">
-        <thead>
-            <tr>
-                <td>
-                    ازالة
-                </td>
-                <td>
-                    صورة
-                </td>
-                <td>
-                    المنتج
-                </td>
-                <td>
-                    السعر
-                </td>
-                <td>
-                    الكمية
-                </td>
-                <td>
-                    التكلفة
-                </td>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>
-                   <a href=""><i class="far fa-times-circle"></i></a> 
-                </td>
-                <td>
-                    <img src="../clotes/4.jpg" alt="">
-                </td>
-                <td>
-                    hody t-shirt
-                </td>
-                <td>
-                    15$
-                </td>
-                <td>
-                    <input type="namber" value="1">
-                </td>
-                <td>
-                    15$
-                </td>
-            </tr>
-            <tr>
-                <td>
-                   <a href=""><i class="far fa-times-circle"></i></a> 
-                </td>
-                <td>
-                    <img src="../clotes/4.jpg" alt="">
-                </td>
-                <td>
-                    hody t-shirt
-                </td>
-                <td>
-                    15$
-                </td>
-                <td>
-                    <input type="namber" value="1">
-                </td>
-                <td>
-                    15$
-                </td>
-            </tr>
-            <tr>
-                <td>
-                   <a href=""><i class="far fa-times-circle"></i></a> 
-                </td>
-                <td>
-                    <img src="../clotes/4.jpg" alt="">
-                </td>
-                <td>
-                    hody t-shirt
-                </td>
-                <td>
-                    15$
-                </td>
-                <td>
-                    <input type="namber" value="1">
-                </td>
-                <td>
-                    15$
-                </td>
-            </tr>
-        </tbody>
+    </section>
+    
+    <section id="cart" class="section-p1">
+        <hr id="hr-line">
+        <table>
+            <thead>
+                <tr>
+                    <th>إزالة</th>
+                    <th>الصورة</th>
+                    <th>المنتج</th>
+                    <th>السعر</th>
+                    <th>الحجم</th>
+                    <th>الكمية / الإجمالي</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                $totalAmount = 0;
+                $totalItems = 0;
 
-    </table>
+                if (!empty($_SESSION['cart'])) {
+                    foreach ($_SESSION['cart'] as $key => $item) {
+                        $totalAmount += $item['proprice'] * $item['proQuantity'];  
+                        $totalItems += $item['proQuantity'];  
+
+                        echo "<tr>";
+                        echo "<td><a href='payment.php?remove=" . $key . "'><i class='far fa-times-circle'></i></a></td>";
+                        echo "<td><img src='../shopping/include/imgupload/" . $item['proimg'] . "' width='50'></td>";
+                        echo "<td>" . $item['proname'] . "</td>";
+                        echo "<td>" . $item['proprice'] . "$</td>";
+                        echo "<td>" . $item['prosize'] . "</td>";
+
+                        echo "<td>";
+                        echo "<input type='number' name='quantity' value='" . $item['proQuantity'] . "' min='1' max='10' oninput='updateTotal(this, $key, " . $item['proprice'] . ")' class='quantity-input'>";
+                        echo "<span id='total_$key' class='total-amount'>" . ($item['proprice'] * $item['proQuantity']) . "$</span>";
+                        echo "<input type='hidden' name='key' value='" . $key . "'>";
+                        echo "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    echo "<tr><td colspan='6'>القائمة فارغة</td></tr>";
+                }
+                ?>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="2.5"><strong>عدد المنتجات المسوقة: <?php echo $totalItems; ?></strong></td>
+                    <td colspan="2.5"><strong>الإجمالي الكلي: <span id="grand-total"><?php echo $totalAmount; ?> $</span></strong></td>
+                
+                 <td colspan="2" style="text-align:center;">
+                        <a href="#Payment-page" class="btn-confirm-order">تأكيد الطلب</a>
+                    </td>
+                </tr>
+            </tfoot>
+        </table>
+    </section>
+
+    <script>
+        function updateTotal(input, key, price) {
+            var quantity = input.value;
+            var total = quantity * price;
+            document.getElementById('total_' + key).textContent = total.toFixed(2) + '$';
+            updateGrandTotal();
+        }
+
+        function updateGrandTotal() {
+            var grandTotal = 0;
+            document.querySelectorAll('.total-amount').forEach(function(element) {
+                grandTotal += parseFloat(element.textContent.replace('$', ''));
+            });
+            document.getElementById('grand-total').textContent = grandTotal.toFixed(2) + ' $';
+        }
+    </script>
+
+
+
+
+    
     
    </section>
    

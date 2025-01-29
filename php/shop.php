@@ -67,47 +67,44 @@ include('../shopping/include/connect.php');
     
     </section>
     <section id="product1" class="section-p1">
-        <div class="pro-continer"  id="pro_continer">
-            
+    <div class="pro-continer" id="pro_continer">
         <?php
-        $query="SELECT * from product ";
-        $result=mysqli_query($conn,$query);
-        while($row=mysqli_fetch_assoc($result)){?>
-
-            <div class="products" onclick="window.location.href='single_product.php?id=<?php echo $row['id'] ?>';">
-                <img src="../shopping/include/imgupload//<?php echo $row['proimg']?>"
-                 alt="">
-                 <div class="product-dec" >
-                    <!-- <h2 id="bonac">100</h2> -->
-                     <span> <?php echo $row['proname']?></span>
-                    <h5>  <?php echo $row['prodesc']?> </h5>
-                     <div class="star">
-                         <i class="fas fa-star"></i>
-                         <i class="fas fa-star"></i>
-                         <i class="fas fa-star"></i>
-                        </div>
-                  
-                          <h4><?php  echo $row['proprice'] ?></h4>
-
+        $query = "SELECT * FROM product";
+        $result = mysqli_query($conn, $query);
+        while ($row = mysqli_fetch_assoc($result)) { ?>
+            <div class="products" onclick="window.location.href='single_product.php?id=<?php echo $row['id']; ?>';">
+                <img src="../shopping/include/imgupload/<?php echo $row['proimg']; ?>" alt="">
+                <div class="product-dec">
+                    <span><?php echo $row['proname']; ?></span>
+                    <h5><?php echo $row['prodesc']; ?></h5>
+                    <div class="star">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
-                 <a href=""><i class="fas fa-shopping-cart">
-                    
-                 </i></a>
-                </div> 
-                <?php }?>
+                    <h4><?php echo $row['proprice']; ?></h4>
+                </div>
                 
-        </div>
+                <form action="payment.php" method="post">
+                    <input type="hidden" name="proname" value="<?php echo $row['proname']; ?>">
+                    <input type="hidden" name="prosize" value="<?php echo isset($row['prosize']) ? $row['prosize'] : 'حجم غير محدد'; ?>">
+                    <input type="hidden" name="proprice" value="<?php echo $row['proprice']; ?>">
+                    <input type="hidden" name="proimg" value="<?php echo $row['proimg']; ?>">
+                    <button type="submit" name="add_to_cart" class="button">
+                        <i class="fas fa-shopping-cart"></i> أضف إلى السلة
+                    </button>
+                </form>
+            </div>
+        <?php } ?>
+    </div>
 
-        <div class="id-re">
+    <div class="id-re">
+        <a href="">1</a>
+        <a href="">2</a>
+        <a href=""><i class=""></i>-></a>
+    </div>
+</section>
 
-              <a href="">1</a>
-              <a href="">2</a>
-              <a href=""><i class=""></i>-></a>
-              
-        </div>
-
-            
-    </section>
     <section id="newsletters" class="section-p1">
         <div class="newstext">
             <h4>
@@ -171,10 +168,7 @@ include('../shopping/include/connect.php');
         </div>
        
     </footer>
-
-  
     <script src="../php/javascript.js"></script>
-
 <script src="../php/item.js"></script>
 </body>
 </html>

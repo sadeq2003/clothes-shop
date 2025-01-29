@@ -1,6 +1,10 @@
 <?php
  session_start();
 include('../shopping/include/connect.php');
+if (isset($_SESSION['EMAIL'])) {
+    header("Location: admin.php");
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,23 +79,3 @@ include('../shopping/include/connect.php');
     <script src="js.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

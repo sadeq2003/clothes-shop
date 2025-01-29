@@ -18,6 +18,7 @@ include('../shopping/include/connect.php');
 @$prosection =$_POST['prosection'];
 @$proid =$_POST['proid'];
 @$proadd =$_POST['proadd'];
+@$prooff =$_POST['prooff'];
 // img start   
 @$imgname=$_FILES['proimg']['name'];
 @$imgname_Tmp=$_FILES['proimg']['tmp_name'];
@@ -53,7 +54,7 @@ if(isset($proadd)){
     
 
 $query="INSERT INTO product(proname,proimg,proprice,
-procolor,prosize,prodesc,pronamber,prosection) VALUES('$proname','$proimg','$proprice','$procolor','$prosize','$prodesc','$pronamber','$prosection')";
+procolor,prosize,prodesc,pronamber,prosection,prooff) VALUES('$proname','$proimg','$proprice','$procolor','$prosize','$prodesc','$pronamber','$prosection','$prooff')";
 
 $result=mysqli_query($conn,$query);
 
@@ -166,7 +167,8 @@ else{
                 <input type="text" placeholder="اسم المنتج" name="proname" class="form_input"/>
                 <input type="text" placeholder="وصف المنتج" name="prodesc"/>
                 <input type="text" placeholder="عدد المنتج المنتج" name="pronamber"/>
-                <input type="text" placeholder="حجم المنتج" name="prosize"/>
+                <input type="namber" placeholder="خصم  المنتج" name="prooff"/>
+                <input type="text" placeholder="حجم " name="prosize"/>
                 <input type="text" placeholder="لون المنتج" name="procolor"/>
                 <input type="price" placeholder="سعر المنتج" name="proprice"/>
                 <input type="file" placeholder="صورة المنتج" name="proimg"/>

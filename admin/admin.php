@@ -50,28 +50,27 @@ include('../shopping/include/connect.php');
     ?>
     
 <!-- حدف القسم  ______________________ -->
-<?php
-if(isset($id)){
-    $query="DELETE FROM section where id= '$id'";
-    $delete =mysqli_query($conn,$query);
-    if(isset($delete)){
+   <?php
+      if(isset($id)){
+       $query="DELETE FROM section where id= '$id'";
+       $delete =mysqli_query($conn,$query);
+       if(isset($delete)){
         echo '<script> alert("ثم الحذف بنجاح "</script>';
 
-    }
-    else{
-        echo '<script> alert("لم يتم الحذف  "</script>';
+           }
+         else{
+             echo '<script> alert("لم يتم الحذف  "</script>';
         
+         }
     }
-}
 
-?>
+    ?>
 
 <section id="header" style="margin: 0;">
-
-<div>
+   <div>
     <a href="../php/index.html"><img src="../logos/logoheader.png" alt="store-logo" class="logo" id="logo"></a>
-</div>
-<div>
+    </div>
+    <div>
     
     <ul id="navbar">
         <li><a href="../php/index.html" >Home</a></li>
@@ -82,12 +81,12 @@ if(isset($id)){
         <li><a href="../admin/login.php" class="active"><i class="fa-solid fa-user" class="active"></i></a></li>
         <li ><i  class="fa-solid fa-circle-xmark" id="close"></i></li>
     </ul>
-</div>
-<div id="mobile">
+    </div>
+    <div id="mobile">
     <a href="../php/payment.html"><i class="fa-solid fa-cart-plus"></i></a>
     <i id="bar" class="fas fa-outdent"></i>
     
-</div>
+    </div>
 </section>
   <section id="container">
 
