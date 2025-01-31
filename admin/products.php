@@ -126,7 +126,7 @@ else{
             <ul id="navbar">
                 <li><a href="../php/index.html" >Home</a></li>
                 <li><a href="../php/shop.php">Shop</a></li>
-                <li><a href="#market.html">market</a></li>
+                <li><a href="../php/market.php">market</a></li>
                 <li><a href="al.php">VR</a></li>
                 <li><a href="../php/payment.php"><i class="fa-solid fa-cart-plus"></i></a></li>
                 <li><a href="../admin/login.php" class="active"><i class="fa-solid fa-user" ></i></a></li>
@@ -153,7 +153,7 @@ else{
                 <i class="fa-solid fa-folder-plus"></i>إضافة منتج</a></li>
                 <li><a href="#">
                 <i class="fa-solid fa-users"></i>معلومات الأعضاء</a></li>
-                <li><a href="#">
+                <li><a href="track_order.php">
                 <i class="fa-solid fa-folder-open"></i>طلبات الزبائن</a></li>
                 <li><a href="logout.php">
                 <i class="fa-solid fa-right-from-bracket"></i>تسجيل الخروج</a></li>

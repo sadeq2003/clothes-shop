@@ -243,15 +243,15 @@
             <ul id="navbar">
                 <li><a href="../php/index.html" >Home</a></li>
                 <li><a href="../php/shop.php">Shop</a></li>
-                <li><a href="#market.html">market</a></li>
-                <li><a href="#live-test.html" class="active">VR</a></li>
+                <li><a href="../php/market.php">market</a></li>
+                <li><a href="../php/ai.php" class="active">VR</a></li>
                 <li><a href="../php/payment.php"><i class="fa-solid fa-cart-plus"></i></a></li>
                 <li><a href="../admin/login.php"><i class="fa-solid fa-user"></i></a></li>
                 <li ><i  class="fa-solid fa-circle-xmark" id="close"></i></li>
             </ul>
         </div>
         <div id="mobile">
-            <a href="catr.html"><i class="fa-solid fa-cart-plus"></i></a>
+            <a href="payment.php"><i class="fa-solid fa-cart-plus"></i></a>
             <i id="bar" class="fas fa-outdent"></i>
             
         </div>

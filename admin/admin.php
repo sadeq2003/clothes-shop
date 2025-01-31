@@ -75,7 +75,7 @@ include('../shopping/include/connect.php');
     <ul id="navbar">
         <li><a href="../php/index.html" >Home</a></li>
         <li><a href="../php/shop.php">Shop</a></li>
-        <li><a href="#market.html">market</a></li>
+        <li><a href="../php/market.php">market</a></li>
         <li><a href="../php/al.php">VR</a></li>
         <li><a href="../php/payment.php"><i class="fa-solid fa-cart-plus"></i></a></li>
         <li><a href="../admin/login.php" class="active"><i class="fa-solid fa-user" class="active"></i></a></li>
@@ -83,7 +83,7 @@ include('../shopping/include/connect.php');
     </ul>
     </div>
     <div id="mobile">
-    <a href="../php/payment.html"><i class="fa-solid fa-cart-plus"></i></a>
+    <a href="../php/payment.php"><i class="fa-solid fa-cart-plus"></i></a>
     <i id="bar" class="fas fa-outdent"></i>
     
     </div>
@@ -92,7 +92,7 @@ include('../shopping/include/connect.php');
 
         <!-- القائمة الجانبية -->
         <div class="sidebar">
-            <h2>لوحة تحكم الإدارة</h2>
+            <!-- <h2>لوحة تحكم الإدارة</h2> -->
             <ul>
                 <li><a href="../php/index.html"> <i class="fa-solid fa-house"></i> الصفحة الرئيسية</a></li>
                 <li><a href="products.php">
@@ -101,7 +101,7 @@ include('../shopping/include/connect.php');
                 <i class="fa-solid fa-folder-plus"></i>إضافة منتج</a></li>
                 <li><a href="#">
                 <i class="fa-solid fa-users"></i>معلومات الأعضاء</a></li>
-                <li><a href="#">
+                <li><a href="track_order.php">
                 <i class="fa-solid fa-folder-open"></i>طلبات الزبائن</a></li>
                 <li><a href="logout.php">
                 <i class="fa-solid fa-right-from-bracket"></i>تسجيل الخروج</a></li>
@@ -151,6 +151,10 @@ include('../shopping/include/connect.php');
      }
      ?>
 
-<script src="../php/javascript.js"></script>
+<script src="../php/javascript.js">
+    
+
+</script>
+
 </body>
 </html>

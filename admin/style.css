@@ -16,25 +16,23 @@ body {
     align-items: center;
 }
 
-/* الشريط الجانبي */
 .sidebar {
     background-color: #2b2f2b;
     display: flex;
     align-items: center;
+    justify-content: space-between;
     color: white;
-    height: 100vh;
     width: 100%;
-    justify-content:space-evenly;
-    height: 20vh;    
+    height: 15vh;
+    padding: 10px 20px;
+    transition: all 0.3s ease-in-out;
+    flex-wrap: wrap;
 }
 
 .sidebar h2 {
-    text-align: center;
-    margin-bottom: 20px;
-    font-size: 18px;
-    color: white;
-    font-weight: bold;
     font-size: 26px;
+    font-weight: bold;
+    margin: 0;
 }
 
 .sidebar ul {
@@ -42,17 +40,19 @@ body {
     padding: 0;
     display: flex;
     direction: ltr;
-   
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start;
 }
 
 .sidebar ul li {
-    margin-right: 15px;
-    padding-left: 20px;
+    margin: 0 15px;
+    display: flex;
+    align-items: center;
 }
-.sidebar ul li i{
-    display: inline;
-    margin-right: 15px;
-    padding-left: 20px;
+
+.sidebar ul li i {
+    font-size: 18px;
 }
 
 .sidebar ul li a {
@@ -60,12 +60,37 @@ body {
     text-decoration: none;
     font-size: 16px;
     display: block;
+    transition: color 0.3s;
 }
 
 .sidebar ul li a:hover {
     text-decoration: underline;
-    color:#007bff;
+    color: #007bff;
 }
+
+@media screen and (max-width: 768px) {
+    .sidebar {
+        height: auto;
+        padding: 10px;
+    }
+
+    .sidebar h2 {
+        font-size: 22px;
+    }
+
+    .sidebar ul li {
+        margin: 5px 10px;
+    }
+
+    .sidebar ul li a {
+        font-size: 14px;
+    }
+
+    .sidebar ul li i {
+        font-size: 16px;
+    }
+}
+
 
 /* المحتوى الرئيسي */
 .main-content {

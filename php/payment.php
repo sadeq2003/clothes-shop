@@ -62,6 +62,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_quantity'])) {
     <link rel="stylesheet" href="..\css\style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="icon" href="logos/logoheader.png">
+
+    <style>
+        @media (max-width: 400px) {
+    #Payment-page {
+        margin-bottom: 280px;
+    }
+}
+        @media (max-width: 800px) {
+    #Payment-page {
+        margin-bottom: 280px;
+    }}
+       
+
+    </style>
 </head>
 
 <body>
@@ -73,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_quantity'])) {
             <ul id="navbar">
                 <li><a href="../php/index.html" >Home</a></li>
                 <li><a href="../php/shop.php" >Shop</a></li>
-                <li><a href="#market.html">market</a></li>
+                <li><a href="../php/market.php">market</a></li>
                 <li><a href="al.php">VR</a></li>
                 <li><a href="../php/payment.php" class="active"><i class="fa-solid fa-cart-plus"></i></a></li>
                 <li><a href="../admin/login.php"><i class="fa-solid fa-user"></i></a></li>
@@ -81,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_quantity'])) {
             </ul>
         </div>
         <div id="mobile">
-            <a href="../php/payment.html"><i class="fa-solid fa-cart-plus"></i></a>
+            <a href="../php/payment.php"><i class="fa-solid fa-cart-plus"></i></a>
             <i id="bar" class="fas fa-outdent"></i>
         </div>
     </section>
@@ -110,7 +124,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_quantity'])) {
 
                 if (!empty($_SESSION['cart'])) {
                     foreach ($_SESSION['cart'] as $key => $item) {
-                        $totalAmount += $item['proprice'] * $item['proQuantity'];  
+                        $totalAmount += floatval($item['proprice']) * intval($item['proQuantity']);
+ 
                         $totalItems += $item['proQuantity'];  
 
                         echo "<tr>";
@@ -122,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_quantity'])) {
 
                         echo "<td>";
                         echo "<input type='number' name='quantity' value='" . $item['proQuantity'] . "' min='1' max='10' oninput='updateTotal(this, $key, " . $item['proprice'] . ")' class='quantity-input'>";
-                        echo "<span id='total_$key' class='total-amount'>" . ($item['proprice'] * $item['proQuantity']) . "$</span>";
+                        echo "<span id='total_$key' class='total-amount'>" . (floatval($item['proprice']) * intval($item['proQuantity'])) . "$</span>";
                         echo "<input type='hidden' name='key' value='" . $key . "'>";
                         echo "</td>";
                         echo "</tr>";
@@ -139,6 +154,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_quantity'])) {
                 
                  <td colspan="2" style="text-align:center;">
                         <a href="#Payment-page" class="btn-confirm-order">تأكيد الطلب</a>
+                        <a href="../admin/track_order.php?id=<?php echo intval($row['id']); ?>" class="btn-confirm-order">تتبع الطلب</a>
+
                     </td>
                 </tr>
             </tfoot>

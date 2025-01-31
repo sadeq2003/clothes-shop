@@ -917,6 +917,14 @@ footer img{
         width: 100%;
         font-size: 12px;
     }
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-items: center;
+        justify-content: center;
+        margin-top: 350px;
+     }
 }
 
 @media (max-width: 480px) {
@@ -943,6 +951,14 @@ footer img{
         width: 100%;
         font-size: 12px;
     }
+    footer {
+        display: flex;
+        flex-direction: column;
+        align-items:center;
+        justify-items: center;
+        justify-content: center;
+        margin-top: 350px;
+     }
 }
 
 @media (max-width:799px) {
@@ -980,7 +996,7 @@ footer img{
       
     }
     
-
+}
 /*---------------- hero-shop  START-----------*/
 
 /*---------------- index @media  START-----------*/
@@ -1105,8 +1121,6 @@ footer img{
         justify-items: center;
         text-align: center;
         margin-bottom: 200px;
-
-
     }
     #sm-banner .banner-box {
         justify-content: center;
@@ -1125,12 +1139,13 @@ footer img{
 
      footer {
         display: flex;
-        flex-direction:grid ;
         flex-direction: column;
         grid-column: 200px;
         align-items:center;
         justify-items: center;
         justify-content: center;
+        margin-top: 100px;
+     }
     }.footer-3 .iframe {
         max-width: 100%;
         border-radius: 10px;
@@ -1183,8 +1198,6 @@ footer img{
         background-repeat: no-repeat;
         background-position: center;
     }
-}}
-
 
 /*--------------- --------------------------------------------------------------
 payment page  START-----------*/
@@ -1489,4 +1502,3 @@ tfoot a:hover {
     padding: 8px;
     text-align: center;
 }
-
