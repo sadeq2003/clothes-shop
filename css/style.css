@@ -565,7 +565,6 @@ margin-bottom: 3px;
 /*---------------- footer  START-----------*/
 
 footer{
-    height: 40vh;
     display: grid;
     grid-template-columns:.1fr 1fr 1fr 1fr;
     align-items: center;
@@ -957,7 +956,6 @@ footer img{
         align-items:center;
         justify-items: center;
         justify-content: center;
-        margin-top: 350px;
      }
 }
 
@@ -1003,10 +1001,7 @@ footer img{
 
 @media (max-width:799px)
  {
-    body{
-        padding: 0;
-        margin: 0;
-    }
+   
     #navbar{
         display: none;
         flex-direction: column;
@@ -1144,6 +1139,7 @@ footer img{
         align-items:center;
         justify-items: center;
         justify-content: center;
+        height: auto;
         margin-top: 100px;
      }
     }.footer-3 .iframe {
@@ -1203,6 +1199,7 @@ payment page  START-----------*/
  display: flex;
  justify-content: center;
  align-items: center;
+ margin: 70px 0 80px 0;
 }
 .container {
     display: flex;
