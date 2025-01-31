@@ -142,6 +142,38 @@ $conn->close();
 
 
         }
+        #navbar{
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0 10px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+}
+
+#navbar li a{
+    
+    font-size: 18px;
+    font-weight: 600;
+    transition: .3s ease-in-out;
+    padding: 0 20px;
+    position: relative;
+    color: white;
+    text-decoration: none;
+
+    
+}
+ #close{
+display: none;
+}
+#logo{
+    width: 160px;
+}
+#navbar li a:hover,
+#navbar li a.active
+{
+    color: #088178;
+}
 
         /* ================ Filter Section ================ */
         .filter-section {
